@@ -1,0 +1,12 @@
+﻿@model MyEpiserverSite.Models.Pages.StartPage
+@{
+    Layout = "~/Views/Shared/_Root.cshtml";
+}
+
+<h1>Hello world, and welcome to our site!</h1>
+<p>
+    <b style="color:blue;">
+        @Html.PropertyFor(m => m.Name)
+    </b>
+</p>
+
