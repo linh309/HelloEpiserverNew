@@ -10,7 +10,6 @@ namespace MyEpiserverSite.Models.Pages
 {
     [ContentType(GUID = "bf2a6bbf-5ac1-49fb-aea5-919336501b37")]
     [ImageUrl("~/Content/imgs/page-type-thumbnail.png")]
-    //public class CommonPageUpdated : BasePage
     public class CommonPageUpdated : PageData
     {
         public virtual string MainIntro { get; set; }

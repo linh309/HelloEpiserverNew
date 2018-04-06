@@ -8,7 +8,7 @@ using System.Web;
 namespace MyEpiserverSite.Models.Pages
 {
     [ContentType(Description = "My first start page", DisplayName = "StartPage")]
-    public class StartPage: BasePage
+    public class StartPage: PageData
     {
 
     }
