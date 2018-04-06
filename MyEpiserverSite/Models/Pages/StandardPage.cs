@@ -7,8 +7,9 @@ using EPiServer.SpecializedProperties;
 
 namespace MyEpiserverSite.Models.Pages
 {
-    [ContentType(DisplayName = "StandardPage", GUID = "981d4679-016c-449e-841e-342f4bf315e4", Description = "")]
-    public class StandardPage : PageData
+    [ContentType(DisplayName = "StandardPage", GUID = "981d4679-016c-449e-841e-342f4bf315e4", Description = "Standard page", GroupName = "Editoral")]
+    [ImageUrl("~/Content/imgs/page-type-thumbnail-contact.png")]
+    public class StandardPage : BasePage
     {
         [CultureSpecific]
         [Display(

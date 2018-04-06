@@ -24,7 +24,7 @@ namespace MyEpiserverSite.Helpers
             var writer = html.ViewContext.Writer;
             contentLink = contentLink ?? html.ViewContext.RequestContext.GetContentLink();
             rootLink = rootLink ?? ContentReference.StartPage;
-
+            
             //Top level elements
             writer.WriteLine("<nav class=\"navbar navbar-inverse\">");
             writer.WriteLine("<ul class=\"nav navbar-nav\">");
@@ -41,9 +41,10 @@ namespace MyEpiserverSite.Helpers
             contentLoader = contentLoader ?? ServiceLocator.Current.GetInstance<IContentLoader>();
             var topLevelPages = contentLoader.GetChildren<PageData>(rootLink);
 
+            var reviewPage = new ContentReference(12);
+            var reviewChildren = contentLoader.GetChildren<PageData>(reviewPage);
             var filterPage = FilterForVisitor.Filter(topLevelPages).OfType<PageData>().Where(x => x.VisibleInMenu);
-
-
+            
             foreach (var topPage in topLevelPages)
             {
                 //create li for page
