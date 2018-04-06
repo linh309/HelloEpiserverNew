@@ -259,6 +259,7 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ItemGroup>
     <Compile Include="Controllers\CommonPageController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\StandardPageController.cs" />
     <Compile Include="Controllers\StartPageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -267,6 +268,7 @@
     <Compile Include="Helpers\Constant\DateTimeEx.cs" />
     <Compile Include="Helpers\NavigationHelpers.cs" />
     <Compile Include="Models\Pages\CommonPageUpdated.cs" />
+    <Compile Include="Models\Pages\ProductPage.cs" />
     <Compile Include="Models\Pages\StandardPage.cs" />
     <Compile Include="Models\Pages\StartPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -318,6 +320,7 @@
     <Content Include="Views\Shared\_Root.cshtml" />
     <Content Include="Views\CommonPage\Index.cshtml" />
     <Content Include="Views\Shared\_WithSubNavigation.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
