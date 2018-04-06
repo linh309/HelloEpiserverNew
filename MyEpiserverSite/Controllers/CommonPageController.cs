@@ -41,6 +41,8 @@ namespace MyEpiserverSite.Controllers
             EPiServer.Core.PropertyData firstProperty = currentPage.Property.FirstOrDefault();
             var propertyCollection = currentPage.Property;
             var propMainIntro = currentPage.Property["MainIntro"];
+            var value = propMainIntro.Value;
+            propMainIntro.Value = "Changed";
 
             var contentLink = currentPage;
             return View(currentPage);
