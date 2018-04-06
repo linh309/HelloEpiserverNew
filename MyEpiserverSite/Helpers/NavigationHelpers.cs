@@ -102,10 +102,7 @@ namespace MyEpiserverSite.Helpers
             RenderSubNavigationLevel(html, root, path, contentLoader);
         }
 
-        private static void RenderSubNavigationLevel(HtmlHelper helper,
-            ContentReference levelRootLink,
-            IEnumerable<ContentReference> path,
-            IContentLoader contentLoader)
+        private static void RenderSubNavigationLevel(HtmlHelper helper,            ContentReference levelRootLink,            IEnumerable<ContentReference> path,            IContentLoader contentLoader)
         {
             var children = contentLoader.GetChildren<PageData>(levelRootLink);
             if (!children.Any())
@@ -113,9 +110,7 @@ namespace MyEpiserverSite.Helpers
                 //There's nothing to render on this level so we abort
                 //in order not to write an empty ul element.
                 return;
-            }
-
-            var writer = helper.ViewContext.Writer;
+            }            var writer = helper.ViewContext.Writer;
             writer.WriteLine("<ul class=\"nav\">");
 
             var indexedChildren = children
