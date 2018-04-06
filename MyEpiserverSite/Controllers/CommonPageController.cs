@@ -38,6 +38,10 @@ namespace MyEpiserverSite.Controllers
         // GET: CommonPage
         public ActionResult Index(CommonPageUpdated currentPage)
         {
+            EPiServer.Core.PropertyData firstProperty = currentPage.Property.FirstOrDefault();
+            var propertyCollection = currentPage.Property;
+            var propMainIntro = currentPage.Property["MainIntro"];
+
             var contentLink = currentPage;
             return View(currentPage);
         }
