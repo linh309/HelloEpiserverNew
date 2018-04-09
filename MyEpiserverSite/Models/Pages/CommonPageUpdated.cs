@@ -1,4 +1,5 @@
-﻿using EPiServer.Core;
+﻿using EPiServer;
+using EPiServer.Core;
 using EPiServer.DataAnnotations;
 using EPiServer.SpecializedProperties;
 using EPiServer.Web;
@@ -47,8 +48,16 @@ namespace MyEpiserverSite.Models.Pages
         [UIHint(UIHint.Textarea)]
         public virtual string PageIntro { get; set; }
 
+        /*
+         *  [Display(Name = "Main Hero Image",
+            GroupName = SystemTabNames.Content,
+            Order = 20)]
+    [UIHint(UIHint.Image)]
+    public virtual ContentReference MainHeroImmage { get; set; }
+         */
+
         [UIHint(UIHint.Image)]
-        public virtual string UrlImage { get; set; }
+        public virtual ContentReference PageImage { get; set; }
     }
 
     [ContentType(GUID = "bf2a6bbf-5ac1-49fb-aea5-919336501b37")]
@@ -95,4 +104,4 @@ namespace MyEpiserverSite.Models.Pages
             }
         }
     }
- }
+}
