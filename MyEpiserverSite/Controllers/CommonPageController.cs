@@ -1,4 +1,5 @@
 ﻿using EPiServer.Core;
+using EPiServer.DataAbstraction;
 using EPiServer.Web.Mvc;
 using MyEpiserverSite.Models.Pages;
 using System;
@@ -12,7 +13,7 @@ using System.Web.Mvc;
 
 namespace MyEpiserverSite.Model.ViewModel
 {
-    public interface IPageViewModel<out T> where T: PageData
+    public interface IPageViewModel<out T> where T : PageData
     {
         T CurrentPage { get; }
         IContent Section { get; set; }
@@ -39,10 +40,17 @@ namespace MyEpiserverSite.Controllers
         public ActionResult Index(CommonPageUpdated currentPage)
         {
             EPiServer.Core.PropertyData firstProperty = currentPage.Property.FirstOrDefault();
+
+
+            PropertyDefinition a = new PropertyDefinition();
+
             var propertyCollection = currentPage.Property;
             var propMainIntro = currentPage.Property["MainIntro"];
             var value = propMainIntro.Value;
-            propMainIntro.Value = "Changed";
+            //propMainIntro.Value = "Changed";
+
+
+            
 
             var contentLink = currentPage;
             return View(currentPage);
