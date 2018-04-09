@@ -22,9 +22,22 @@
         })
     </script>*@
 
-@model MyEpiserverSite.Models.Pages.CommonPageUpdated
-<h1>@Html.PropertyFor(x => x.PageName)</h1>
-<p class="lead">@Html.PropertyFor(x => x.MainIntro)</p>
-@Html.PropertyFor(x => x.MainBody)
-@Html.PropertyFor(x => x.PageTitle)
-@Html.PropertyFor(x => x.Subsidiaries)
+@model MyEpiserverSite.Models.ViewModels.CommonPageViewModel
+
+<h1>@Html.PropertyFor(x => x.CommonCurrentPage.PageName)</h1>
+@if (!string.IsNullOrEmpty(Model.AvailableCountries))
+{
+    <h2>
+        <span>Avaiable on: </span>
+        <span style="color:red;">@Model.AvailableCountries</span>
+    </h2>
+}
+<h3>Main body</h3>
+<hr />
+@Html.PropertyFor(x => x.CommonCurrentPage.MainBody)
+<h3><b>Introduction</b></h3>
+<hr />
+@*<div @Html.EditAttributes(x=>x.CommonCurrentPage.PageIntro)>*@
+<div>
+    @Model.CommonCurrentPage.PageIntro.ToHtmlLineBreaks()
+</div>

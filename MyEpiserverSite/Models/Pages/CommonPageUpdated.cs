@@ -4,6 +4,7 @@ using EPiServer.SpecializedProperties;
 using MyEpiserverSite.Helpers.Constant;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -41,6 +42,9 @@ namespace MyEpiserverSite.Models.Pages
 
         [BackingType(typeof(PropertyAppSettingsMultiple))]
         public virtual string Subsidiaries { get; set; }
+
+        [UIHint("textarea")]
+        public virtual string PageIntro { get; set; }
     }
 
     [ContentType(GUID = "bf2a6bbf-5ac1-49fb-aea5-919336501b37")]
@@ -52,7 +56,7 @@ namespace MyEpiserverSite.Models.Pages
         public virtual XhtmlString MainBody { get; set; }
         public virtual ContentArea RelatedContentArea { get; set; }
 
-        [System.ComponentModel.DataAnnotations.Display(GroupName = "Metada", Name = "PageTitle", Description = "Long Page title")]
+        [System.ComponentModel.DataAnnotations.Display(Name = "PageTitle", Description = "Long Page title")]
         public override string PageTitle
         {
             get
@@ -87,4 +91,4 @@ namespace MyEpiserverSite.Models.Pages
             }
         }
     }
-}
+ }

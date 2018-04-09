@@ -2,8 +2,10 @@
 using EPiServer.DataAbstraction;
 using EPiServer.Web.Mvc;
 using MyEpiserverSite.Models.Pages;
+using MyEpiserverSite.Models.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -39,6 +41,7 @@ namespace MyEpiserverSite.Controllers
         // GET: CommonPage
         public ActionResult Index(CommonPageUpdated currentPage)
         {
+            var viewModel = new CommonPageViewModel(currentPage);
             EPiServer.Core.PropertyData firstProperty = currentPage.Property.FirstOrDefault();
 
 
@@ -49,11 +52,43 @@ namespace MyEpiserverSite.Controllers
             var value = propMainIntro.Value;
             //propMainIntro.Value = "Changed";
 
+            var propbSubsidiaries = currentPage.Property["Subsidiaries"];
+            var dictSubsidiaries = DictSubsidiaries("Subsidiaries");
 
-            
+            foreach (var itemDict in dictSubsidiaries)
+            {
+                if (propbSubsidiaries.Value.ToString().Contains(itemDict.Key))
+                {
+                    viewModel.AvailableCountries += itemDict.Value + ", ";
+                }
+            }
 
             var contentLink = currentPage;
-            return View(currentPage);
+            return View(viewModel);
+        }
+
+        private Dictionary<string, string> DictSubsidiaries(string key)
+        {
+            var dict = new Dictionary<string, string>();
+            var subsidiariesValue = ReadAppSetting(key);
+            if (!string.IsNullOrEmpty(subsidiariesValue))
+            {
+                dict = subsidiariesValue.Split('|').ToList().ToDictionary(x => x.Split(';')[1], x => x.Split(';')[0]);
+            }
+
+            return dict;
+        }
+
+        private string ReadAppSetting(string key)
+        {
+            string value = string.Empty;
+            var appSettings = ConfigurationManager.AppSettings;
+            if (appSettings.AllKeys.Contains(key))
+            {
+                value = appSettings[key];
+            }
+
+            return value;
         }
     }
 }
