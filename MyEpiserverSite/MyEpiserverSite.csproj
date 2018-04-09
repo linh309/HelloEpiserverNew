@@ -323,6 +323,7 @@
     <Content Include="Views\CommonPage\Index.cshtml" />
     <Content Include="Views\Shared\_WithSubNavigation.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Textarea.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

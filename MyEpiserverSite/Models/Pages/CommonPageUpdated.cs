@@ -1,6 +1,7 @@
 ﻿using EPiServer.Core;
 using EPiServer.DataAnnotations;
 using EPiServer.SpecializedProperties;
+using EPiServer.Web;
 using MyEpiserverSite.Helpers.Constant;
 using System;
 using System.Collections.Generic;
@@ -43,8 +44,11 @@ namespace MyEpiserverSite.Models.Pages
         [BackingType(typeof(PropertyAppSettingsMultiple))]
         public virtual string Subsidiaries { get; set; }
 
-        [UIHint("textarea")]
+        [UIHint(UIHint.Textarea)]
         public virtual string PageIntro { get; set; }
+
+        [UIHint(UIHint.Image)]
+        public virtual string UrlImage { get; set; }
     }
 
     [ContentType(GUID = "bf2a6bbf-5ac1-49fb-aea5-919336501b37")]

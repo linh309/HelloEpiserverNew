@@ -38,6 +38,11 @@
 <h3><b>Introduction</b></h3>
 <hr />
 @*<div @Html.EditAttributes(x=>x.CommonCurrentPage.PageIntro)>*@
-<div>
+@*<div @Html.EditAttributes(x=>x.CommonCurrentPage.PageIntro)>
     @Model.CommonCurrentPage.PageIntro.ToHtmlLineBreaks()
-</div>
+</div>*@
+
+@Html.PropertyFor(m=>m.CommonCurrentPage.PageIntro)
+
+
+@Html.PropertyFor(m=>m.CommonCurrentPage.PageIntro, new { })
