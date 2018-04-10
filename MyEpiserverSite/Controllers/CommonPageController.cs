@@ -57,7 +57,7 @@ namespace MyEpiserverSite.Controllers
 
             foreach (var itemDict in dictSubsidiaries)
             {
-                if (propbSubsidiaries.Value.ToString().Contains(itemDict.Key))
+                if (propbSubsidiaries != null && !string.IsNullOrEmpty(propbSubsidiaries.ToString()) && propbSubsidiaries.Value.ToString().Contains(itemDict.Key))
                 {
                     viewModel.AvailableCountries += itemDict.Value + ", ";
                 }

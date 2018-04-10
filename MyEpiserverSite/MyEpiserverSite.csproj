@@ -296,6 +296,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="lang\ContentTypesEN.xml" />
+    <Content Include="Resources\LanguageFiles\ContentTypesEN.xml" />
+    <Content Include="Resources\LanguageFiles\ContentTypesSV.xml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

@@ -8,15 +8,12 @@ using System.Web.Mvc;
 
 namespace MyEpiserverSite.Controllers
 {
-    public class ImageFileController : PartialContentController<ImageFile>
-    {
-
-        // GET: ImageFile
-        public override ActionResult Index(ImageFile currentContent)
-        {
-
-
-            return View();
-        }
-    }
+    //public class ImageFileController : PartialContentController<ImageFile>
+    //{
+    //    // GET: ImageFile
+    //    public override ActionResult Index(ImageFile currentContent)
+    //    {
+    //        return View();
+    //    }
+    //}
 }
