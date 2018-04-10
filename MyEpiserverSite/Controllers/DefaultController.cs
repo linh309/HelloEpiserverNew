@@ -19,7 +19,7 @@ namespace MyEpiserverSite.Controllers
             var type = typeof(PageViewModel<>).MakeGenericType(currentPage.GetOriginalType());
             var model = Activator.CreateInstance(type, currentPage) as IPageViewModel<EPiServer.Core.PageData>;
             var viewName = $"~/Views/{currentPage.GetOriginalType().Name}/Index.cshtml";
-            return View(viewName, model.CurrentPage);
+            return View(viewName, model.CurrentPage); //CultureSpecific
         }
     }
 }
