@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<languages>
+  <language name="English" id="en">
+    <views>
+      <common>
+        <linklist>
+          <headline>Links</headline>
+        </linklist>
+        <readmore>Read more</readmore>
+      </common>
+    </views>
+  </language>
+</languages>

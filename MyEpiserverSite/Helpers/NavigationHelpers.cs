@@ -24,7 +24,8 @@ namespace MyEpiserverSite.Helpers
             var writer = html.ViewContext.Writer;
             contentLink = contentLink ?? html.ViewContext.RequestContext.GetContentLink();
             rootLink = rootLink ?? ContentReference.StartPage;
-            
+
+
             //Top level elements
             writer.WriteLine("<nav class=\"navbar navbar-inverse\">");
             writer.WriteLine("<ul class=\"nav navbar-nav\">");
@@ -44,14 +45,18 @@ namespace MyEpiserverSite.Helpers
             var reviewPage = new ContentReference(12);
             var reviewChildren = contentLoader.GetChildren<PageData>(reviewPage);
             var filterPage = FilterForVisitor.Filter(topLevelPages).OfType<PageData>().Where(x => x.VisibleInMenu);
-            
+
             foreach (var topPage in topLevelPages)
             {
-                //create li for page
-                //writer.WriteLine("<li>");
-                writer.WriteLine(MakeActiveLink(contentLink, topPage.ContentLink));
-                writer.WriteLine(html.PageLink(topPage));
-                writer.WriteLine("</li>");
+                var propVisibleInMenu = (bool)topPage.Property["PageVisibleInMenu"].Value;
+                if (propVisibleInMenu)
+                {
+                    //create li for page
+                    //writer.WriteLine("<li>");
+                    writer.WriteLine(MakeActiveLink(contentLink, topPage.ContentLink));
+                    writer.WriteLine(html.PageLink(topPage));
+                    writer.WriteLine("</li>");
+                }
             }
 
             //close tags
@@ -127,29 +132,36 @@ namespace MyEpiserverSite.Helpers
                 var partOfCurrentBranch = path.Any(x =>
                 x.CompareToIgnoreWorkID(levelItem.page.ContentLink));
 
-                if (partOfCurrentBranch)
+                var propVisibleInMenu = (bool)page.Property["PageVisibleInMenu"].Value;
+                if (propVisibleInMenu)
                 {
-                    writer.WriteLine("<li class=\"active\">");
-                }
-                else
-                {
-                    writer.WriteLine("<li>");
-                }
 
-                writer.WriteLine(helper.PageLink(page).ToHtmlString());
 
-                if (partOfCurrentBranch)
-                {
-                    //The page is part of the current pages branch,
-                    //so we render a level below it
-                    RenderSubNavigationLevel(
-                    helper,
-                    page.ContentLink,
-                    path,
-                    contentLoader);
+
+                    if (partOfCurrentBranch)
+                    {
+                        writer.WriteLine("<li class=\"active\">");
+                    }
+                    else
+                    {
+                        writer.WriteLine("<li>");
+                    }
+
+                    writer.WriteLine(helper.PageLink(page).ToHtmlString());
+
+                    if (partOfCurrentBranch)
+                    {
+                        //The page is part of the current pages branch,
+                        //so we render a level below it
+                        RenderSubNavigationLevel(
+                        helper,
+                        page.ContentLink,
+                        path,
+                        contentLoader);
+                    }
+
+                    writer.WriteLine("</li>");
                 }
-
-                writer.WriteLine("</li>");
             }
 
             writer.WriteLine("</ul>");

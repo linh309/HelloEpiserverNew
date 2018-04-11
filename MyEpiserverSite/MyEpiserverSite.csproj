@@ -302,12 +302,14 @@
     <Content Include="lang\ContentTypesEN.xml" />
     <Content Include="Resources\LanguageFiles\ContentTypesEN.xml" />
     <Content Include="Resources\LanguageFiles\ContentTypesSV.xml" />
+    <Content Include="Resources\LanguageFiles\ViewsEN.xml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Views\PlainPage\Index.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -334,7 +336,7 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Textarea.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Image.cshtml" />
-    <Content Include="Views\PlainPage\Index.cshtml" />
+    <Content Include="Views\Shared\PlainPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,9 @@
+﻿@model MyEpiserverSite.Models.Pages.PlainPage
+@{
+    var readMoreText = MyEpiserverSite.Helpers.FormattingExtensions.GetReadMoreText();
+    var pageRef = MyEpiserverSite.Helpers.FormattingExtensions.GetPageReference(Model.ContentLink.ID);
+}
+<h2>Title - use for partial renderer</h2>
+<hr />
+<span>@Model.PageTitle</span>
+<span>Read more now: @Html.PageLink(readMoreText, pageRef) </span>

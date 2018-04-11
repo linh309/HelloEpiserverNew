@@ -53,5 +53,10 @@
 </span>
 
 @section RightColumn{
-    @Html.PropertyFor(m => m.CommonCurrentPage.RightColumnContent)
+    @Html.PropertyFor(m => m.CommonCurrentPage.RightColumnContent,
+        new
+        {
+            ChildrenCssClass = "startpage-content-item",
+            EditContainerClass = "clearfix"
+        })
 }

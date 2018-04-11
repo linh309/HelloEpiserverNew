@@ -19,3 +19,13 @@
                 padding: 5px 25px;
                 font-size: 90%;
             }
+
+.startpage-content-item {
+    width: 30%;
+    margin-left: 5%;
+    float: left;
+}
+
+.startpage-content-item:nth-of-type(3n+1) {
+    margin-left: 0;
+}
