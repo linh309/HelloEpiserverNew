@@ -64,6 +64,8 @@ namespace MyEpiserverSite.Models.Pages
     [ImageUrl("~/Content/imgs/page-type-thumbnail.png")]
     public class CommonPageUpdated : BasePage
     {
+        public virtual ContentArea RightColumnContent { get; set; }
+
         public virtual string MainIntro { get; set; }
 
         public virtual XhtmlString MainBody { get; set; }

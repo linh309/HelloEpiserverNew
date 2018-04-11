@@ -15,7 +15,9 @@ namespace MyEpiserverSite.Helpers
             {
                 parsed = HttpUtility.HtmlEncode(value);
                 parsed = parsed.Replace("\n", "<br />");
-            }            return new HtmlString(parsed);
+            }
+
+            return new HtmlString(parsed);
         }
     }
 }
