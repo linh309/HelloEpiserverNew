@@ -270,6 +270,9 @@
     <Compile Include="Helpers\Constant\DateTimeEx.cs" />
     <Compile Include="Helpers\FormattingExtensions.cs" />
     <Compile Include="Helpers\NavigationHelpers.cs" />
+    <Compile Include="Models\Blocks\CommentUser.cs" />
+    <Compile Include="Models\Blocks\ImageBlock.cs" />
+    <Compile Include="Models\Blocks\TeaserBlock.cs" />
     <Compile Include="Models\Media\ImageFile.cs" />
     <Compile Include="Models\Pages\CommonPageUpdated.cs" />
     <Compile Include="Models\Pages\PlainPage.cs" />
@@ -286,11 +289,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Business\" />
-    <Folder Include="Models\Blocks\" />
     <Folder Include="Models\Properties\" />
     <Folder Include="Static\" />
     <Folder Include="Views\Default\" />
     <Folder Include="Views\ImageFile\" />
+    <Folder Include="Views\Shared\Blocks\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\EPiServerDB_7a038286.mdf" />
@@ -344,6 +347,7 @@
     <Content Include="Views\Shared\DisplayTemplates\Textarea.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Image.cshtml" />
     <Content Include="Views\Shared\PlainPage.cshtml" />
+    <Content Include="Views\Shared\ImageBlock.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
