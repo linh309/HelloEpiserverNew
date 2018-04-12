@@ -293,6 +293,10 @@
     <Folder Include="Views\ImageFile\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\EPiServerDB_7a038286.mdf" />
+    <Content Include="App_Data\EPiServerDB_7a038286_log.ldf">
+      <DependentUpon>EPiServerDB_7a038286.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\custom.css" />
