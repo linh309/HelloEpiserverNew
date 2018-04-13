@@ -1,14 +1,10 @@
-﻿using EPiServer;
-using EPiServer.Core;
+﻿using EPiServer.Core;
 using EPiServer.DataAnnotations;
 using EPiServer.SpecializedProperties;
 using EPiServer.Web;
-using MyEpiserverSite.Helpers.Constant;
+using MyEpiserverSite.Models.Blocks;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace MyEpiserverSite.Models.Pages
 {
@@ -65,6 +61,14 @@ namespace MyEpiserverSite.Models.Pages
     public class CommonPageUpdated : BasePage
     {
         public virtual ContentArea RightColumnContent { get; set; }
+
+        //public virtual ListPageBlock Archive { get; set; }
+
+        //public virtual ContentArea PageListArea { get; set; }
+
+        public virtual ContentArea ArchiveList { get; set; }
+
+        public virtual ListPageBlock ListBlock { get; set; }
 
         public virtual string MainIntro { get; set; }
 

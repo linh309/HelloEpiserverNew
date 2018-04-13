@@ -54,9 +54,24 @@
 
 @section RightColumn{
     @Html.PropertyFor(m => m.CommonCurrentPage.RightColumnContent,
-        new
-        {
-            ChildrenCssClass = "startpage-content-item",
-            EditContainerClass = "clearfix"
-        })
+                            new
+                            {
+                                ChildrenCssClass = "startpage-content-item",
+                                EditContainerClass = "clearfix"
+                            })
 }
+
+
+
+<hr />
+<p>PageListArea</p>
+
+<hr />
+<p>ArchiveList</p>
+@Html.PropertyFor(m => m.CommonCurrentPage.ArchiveList)
+
+
+<hr />
+<p>ListBlock</p>
+@Html.PropertyFor(m => m.CommonCurrentPage.ListBlock)
+
